@@ -1,7 +1,11 @@
 # JVM---GraalVM
+
 `
 java -server --add-modules=jdk.incubator.vector -Xms8G -Xmx14G -XX:AllocatePrefetchStyle=3 -XX:+UseG1GC -XX:MaxGCPauseMillis=130 -XX:+UnlockExperimentalVMOptions -XX:+UnlockDiagnosticVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=28 -XX:G1HeapRegionSize=16M -XX:G1ReservePercent=20 -XX:G1MixedGCCountTarget=3 -XX:InitiatingHeapOccupancyPercent=10 -XX:G1MixedGCLiveThresholdPercent=90 -XX:SurvivorRatio=32 -XX:MaxTenuringThreshold=1 -XX:+PerfDisableSharedMem -XX:G1SATBBufferEnqueueingThresholdPercent=30 -XX:G1ConcMarkStepDurationMillis=5 -XX:G1RSetUpdatingPauseTimePercent=0 -XX:G1HeapWastePercent=18 -XX:GCTimeRatio=99 -XX:+AlwaysActAsServerClassMachine -XX:NmethodSweepActivity=1 -XX:ThreadPriorityPolicy=1 -XX:ReservedCodeCacheSize=400M -XX:NonNMethodCodeHeapSize=12M -XX:ProfiledCodeHeapSize=194M -XX:NonProfiledCodeHeapSize=194M -XX:-DontCompileHugeMethods -XX:MaxNodeLimit=240000 -XX:NodeLimitFudgeFactor=8000 -XX:+UseVectorCmov -XX:+UseFastUnorderedTimeStamps -XX:+UseCriticalJavaThreadPriority -XX:+UseLargePages -XX:LargePageSizeInBytes=2M -XX:+OptimizeStringConcat -XX:+DisableAttachMechanism -XX:+EagerJVMCI -Dgraal.TuneInlinerExploration=1 -Dgraal.LoopRotation=true -Dgraal.OptWriteMotion=true -Dgraal.WriteableCodeCache=true -Dgraal.CompilerConfiguration=enterprise -XX:+PrintCommandLineFlags -jar server.jar nogui
 `
+
+
+```
 -server：选择服务器模式的 JVM，会进行更多的优化，可能包括更大的内存分配、更积极的编译等，通常用于服务器环境以获得更好的性能和伸缩性。
 --add-modules=jdk.incubator.vector：添加特定的实验性模块，可能启用一些新的特性或功能，但这依赖于该模块的具体内容和应用场景。
 -Xms8G：设置初始堆内存大小为 8GB，这决定了应用启动时分配的堆内存量，较大的初始堆可能适合内存需求较大的应用，但也可能导致启动时间较长和一定的内存浪费，如果系统内存不足可能无法设置这么大的值。
@@ -51,3 +55,5 @@ java -server --add-modules=jdk.incubator.vector -Xms8G -Xmx14G -XX:AllocatePrefe
 -Dgraal.WriteableCodeCache=true：使代码缓存可写。
 -Dgraal.CompilerConfiguration=enterprise：设置 Graal 编译器配置为企业版。
 -XX:+PrintCommandLineFlags：打印命令行标志。
+```
+

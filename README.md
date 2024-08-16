@@ -1,7 +1,7 @@
 # JVM---GraalVM
 
 `
-java -server --add-modules=jdk.incubator.vector -Xms8G -Xmx14G -XX:AllocatePrefetchStyle=3 -XX:+UseG1GC -XX:MaxGCPauseMillis=130 -XX:+UnlockExperimentalVMOptions -XX:+UnlockDiagnosticVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=28 -XX:G1HeapRegionSize=16M -XX:G1ReservePercent=20 -XX:G1MixedGCCountTarget=3 -XX:InitiatingHeapOccupancyPercent=10 -XX:G1MixedGCLiveThresholdPercent=90 -XX:SurvivorRatio=32 -XX:MaxTenuringThreshold=1 -XX:+PerfDisableSharedMem -XX:G1SATBBufferEnqueueingThresholdPercent=30 -XX:G1ConcMarkStepDurationMillis=5 -XX:G1RSetUpdatingPauseTimePercent=0 -XX:G1HeapWastePercent=18 -XX:GCTimeRatio=99 -XX:+AlwaysActAsServerClassMachine -XX:NmethodSweepActivity=1 -XX:ThreadPriorityPolicy=1 -XX:ReservedCodeCacheSize=400M -XX:NonNMethodCodeHeapSize=12M -XX:ProfiledCodeHeapSize=194M -XX:NonProfiledCodeHeapSize=194M -XX:-DontCompileHugeMethods -XX:MaxNodeLimit=240000 -XX:NodeLimitFudgeFactor=8000 -XX:+UseVectorCmov -XX:+UseFastUnorderedTimeStamps -XX:+UseCriticalJavaThreadPriority -XX:+UseLargePages -XX:LargePageSizeInBytes=2M -XX:+OptimizeStringConcat -XX:+DisableAttachMechanism -XX:+EagerJVMCI -Dgraal.TuneInlinerExploration=1 -Dgraal.LoopRotation=true -Dgraal.OptWriteMotion=true -Dgraal.WriteableCodeCache=true -Dgraal.CompilerConfiguration=enterprise -XX:+PrintCommandLineFlags -jar server.jar nogui
+java -server --add-modules=jdk.incubator.vector -Xms8G -Xmx14G -XX:AllocatePrefetchStyle=3 -XX:+UseG1GC -XX:MaxGCPauseMillis=130 -XX:+UnlockExperimentalVMOptions -XX:+UnlockDiagnosticVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=28 -XX:G1HeapRegionSize=16M -XX:G1ReservePercent=20 -XX:G1MixedGCCountTarget=3 -XX:InitiatingHeapOccupancyPercent=10 -XX:G1MixedGCLiveThresholdPercent=90 -XX:SurvivorRatio=32 -XX:MaxTenuringThreshold=1 -XX:+PerfDisableSharedMem -XX:G1SATBBufferEnqueueingThresholdPercent=30 -XX:G1ConcMarkStepDurationMillis=5 -XX:G1RSetUpdatingPauseTimePercent=0 -XX:G1HeapWastePercent=18 -XX:GCTimeRatio=99 -XX:+AlwaysActAsServerClassMachine -XX:NmethodSweepActivity=1 -XX:ThreadPriorityPolicy=1 -XX:ReservedCodeCacheSize=400M -XX:NonNMethodCodeHeapSize=12M -XX:ProfiledCodeHeapSize=194M -XX:NonProfiledCodeHeapSize=194M -XX:-DontCompileHugeMethods -XX:MaxNodeLimit=240000 -XX:NodeLimitFudgeFactor=8000 -XX:+UseVectorCmov -XX:+UseFastUnorderedTimeStamps -XX:+UseCriticalJavaThreadPriority -XX:+UseLargePages -XX:LargePageSizeInBytes=2M -XX:+OptimizeStringConcat -XX:+DisableAttachMechanism -XX:+EagerJVMCI -Dgraal.TuneInlinerExploration=1 -Dgraal.LoopRotation=true -Dgraal.OptWriteMotion=true -Dgraal.CompilerConfiguration=enterprise -XX:+PrintCommandLineFlags -jar server.jar nogui
 `
 
 
@@ -52,7 +52,6 @@ java -server --add-modules=jdk.incubator.vector -Xms8G -Xmx14G -XX:AllocatePrefe
 -Dgraal.TuneInlinerExploration=1：与 Graal 内联器探索相关。
 -Dgraal.LoopRotation=true：启用循环旋转。
 -Dgraal.OptWriteMotion=true：优化写入移动。
--Dgraal.WriteableCodeCache=true：使代码缓存可写。
 -Dgraal.CompilerConfiguration=enterprise：设置 Graal 编译器配置为企业版。
 -XX:+PrintCommandLineFlags：打印命令行标志。
 ```
